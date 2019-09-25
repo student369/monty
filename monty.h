@@ -38,6 +38,12 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-int isValidOpcode(char *op);
+extern stack_t **GS;
+int isValidOpcode(char *ops[], char *op);
 char **interp_l(char *l);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void execute(char **opcodes, instruction_t *ins, unsigned int ln,
+	     int v);
+int num_opcodes(char **ops);
 #endif /* MONTY_H */
