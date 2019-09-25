@@ -3,7 +3,13 @@
 #define L_LINE 255
 #define TOK_DELIM " \n"
 #define TOK_BUFF 64
+#define ERROR_MALLOC 0
+#define ERROR_USAGE_FILE 1
+#define ERROR_OPEN_FILE 2
+#define ERROR_UNKNOWN 3
+#define ERROR_PUSH 4
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -38,12 +44,37 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-extern stack_t **GS;
-int isValidOpcode(char *ops[], char *op);
+/**
+ * struct things_s -a truct to point others structs
+ * @fname: The filename
+ * @stack: The stack
+ * @ln: The line
+ * @toks: The tokens
+ * @ln: The line number
+ * @f: The file
+ */
+typedef struct things_s
+{
+	char *fname;
+	stack_t *stack;
+	char *line;
+	char **toks;	
+        unsigned int ln;
+	FILE *f;
+} things_t;
+extern things_t *T;
+things_t *T;
 char **interp_l(char *l);
+void (*find_opcode(void))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void execute(char **opcodes, instruction_t *ins, unsigned int ln,
-	     int v);
+void add_stack(stack_t **stack, stack_t *nw);
 int num_opcodes(char **ops);
+int tok_line(char *line);
+void mng_errs(int e);
+void free_all(void);
+void free_stack(void);
+void add_stack(stack_t **stack, stack_t *nw);
+int build_things(void);
+int are_digits(char *s);
 #endif /* MONTY_H */
