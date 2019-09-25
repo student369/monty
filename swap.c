@@ -12,7 +12,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	int t;
 	(void)line_number;
 
-	if ((*stack) == NULL)
+	if ((*stack) == NULL || T->len < 2)
 	{
 		mng_errs(ERROR_SWAP);
 	}
