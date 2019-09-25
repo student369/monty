@@ -18,7 +18,8 @@ void mng_errs(int e)
 		"can't add, stack too short\n",
 		"can't sub, stack too short\n",
 		"can't div, stack too short\n",
-		"division by zero\n"
+		"division by zero\n",
+		"can't mul, stack too short\n"
 	};
 	if (T)
 		n = T->ln;
