@@ -16,6 +16,7 @@
 #define ERROR_DIV 8
 #define ERROR_ZERO 9
 #define ERROR_MUL 10
+#define ERROR_MOD 11
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -85,6 +86,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 void add_stack(stack_t **stack, stack_t *nw);
 int num_opcodes(char **ops);
 int tok_line(char *line);
