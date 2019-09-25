@@ -10,7 +10,7 @@ int build_things(void)
 	T = (things_t *)malloc(sizeof(things_t));
 	if (!T)
 		mng_errs(ERROR_MALLOC);
-	T->toks = (char **)malloc(sizeof(char *) * 3);
+	T->toks = (char **)malloc(sizeof(char *) * 4);
 	if (!T->toks)
 	{
 		free(T);
