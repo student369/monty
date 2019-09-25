@@ -9,7 +9,8 @@
 #define ERROR_UNKNOWN 3
 #define ERROR_PUSH 4
 #define ERROR_PINT 3
-#define ERROR_POP 5
+#define ERROR_POP 4
+#define ERROR_SWAP 5
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -72,6 +73,7 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 void add_stack(stack_t **stack, stack_t *nw);
 int num_opcodes(char **ops);
 int tok_line(char *line);
