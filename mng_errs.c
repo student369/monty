@@ -13,7 +13,8 @@ void mng_errs(int e)
 		"USAGE: monty file\n",
 		"usage: push integer\n",
 		"can't pint, stack empty",
-		"can't pop an empty stack"
+		"can't pop an empty stack",
+		"can't swap, stack too short"
 	};
 	if (T)
 		n = T->ln;
