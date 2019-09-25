@@ -3,7 +3,7 @@ void (*opcode_fnc[])(stack_t **stack,
 		     unsigned int line_number) = {&push, &pall};
 /**
   * num_opcodes - get the count of the opcodes.
-  *
+  * @ops: The opcodes list.
   * Return: the count of opcodes
   */
 int num_opcodes(char **ops)
@@ -12,8 +12,9 @@ int num_opcodes(char **ops)
 }
 /**
  * execute - funtion to execute he opcode
+ * @opcodes: The opcodes list.
  * @ins: The instruction
- * @ln: The line
+ * @ln: The line numer
  * @v: The value
  *
  * Return: 1 or error
@@ -76,7 +77,8 @@ char **interp_l(char *l)
 
 /**
  * isValidOpcode - verify if the opcode it's correct
- * @op: The opcode to validate
+ * @ops: The opcodes list.
+ * @op: The opcode to validate.
  *
  * Return: 1 or 0
  */
