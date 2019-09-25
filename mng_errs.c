@@ -12,13 +12,13 @@ void mng_errs(int e)
 		"Error: malloc failed\n",
 		"USAGE: monty file\n",
 		"usage: push integer\n",
-		"can't pint, stack empty",
-		"can't pop an empty stack",
-		"can't swap, stack too short",
-		"can't add, stack too short",
-		"can't sub, stack too short",
-		"can't div, stack too short",
-		"division by zero"
+		"can't pint, stack empty\n",
+		"can't pop an empty stack\n",
+		"can't swap, stack too short\n",
+		"can't add, stack too short\n",
+		"can't sub, stack too short\n",
+		"can't div, stack too short\n",
+		"division by zero\n"
 	};
 	if (T)
 		n = T->ln;
