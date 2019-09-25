@@ -9,8 +9,11 @@ void mng_errs(int e)
 {
 	unsigned int n;
 	static char *const errs[] = {
-		"Error: malloc failed\n", "USAGE: monty file\n",
-		"usage: push integer\n", "can't pint, stack empty"
+		"Error: malloc failed\n",
+		"USAGE: monty file\n",
+		"usage: push integer\n",
+		"can't pint, stack empty",
+		"can't pop an empty stack"
 	};
 	if (T)
 		n = T->ln;
