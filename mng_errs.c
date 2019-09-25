@@ -14,7 +14,8 @@ void mng_errs(int e)
 		"usage: push integer\n",
 		"can't pint, stack empty",
 		"can't pop an empty stack",
-		"can't swap, stack too short"
+		"can't swap, stack too short",
+		"can't add, stack too short"
 	};
 	if (T)
 		n = T->ln;
