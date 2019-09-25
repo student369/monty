@@ -11,6 +11,7 @@
 #define ERROR_PINT 3
 #define ERROR_POP 4
 #define ERROR_SWAP 5
+#define ERROR_ADD 6
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
