@@ -16,7 +16,9 @@ void mng_errs(int e)
 		"can't pop an empty stack",
 		"can't swap, stack too short",
 		"can't add, stack too short",
-		"can't sub, stack too short"
+		"can't sub, stack too short",
+		"can't div, stack too short",
+		"division by zero"
 	};
 	if (T)
 		n = T->ln;
