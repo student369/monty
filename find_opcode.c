@@ -14,7 +14,7 @@ void (*find_opcode(void))(stack_t **stack, unsigned int line_number)
 		{"swap", swap}, {"add", add},
 		{"nop", nop}, {"sub", sub},
 		{"div", _div}, {"mul", _mul},
-		{NULL, NULL}
+		{"mod", _mod}, {NULL, NULL}
 	};
 	i = ins;
 	opcode = T->toks[0];
