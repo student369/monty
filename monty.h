@@ -64,6 +64,7 @@ typedef struct things_s
 	char **toks;	
         unsigned int ln;
 	FILE *f;
+	size_t len;
 } things_t;
 extern things_t *T;
 things_t *T;
@@ -74,6 +75,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 void add_stack(stack_t **stack, stack_t *nw);
 int num_opcodes(char **ops);
 int tok_line(char *line);
@@ -83,4 +85,5 @@ void free_stack(void);
 void add_stack(stack_t **stack, stack_t *nw);
 int build_things(void);
 int are_digits(char *s);
+size_t stack_len(stack_t *h);
 #endif /* MONTY_H */
