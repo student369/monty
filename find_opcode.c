@@ -12,7 +12,8 @@ void (*find_opcode(void))(stack_t **stack, unsigned int line_number)
 		{"push", push}, {"pall", pall},
 		{"pint", pint}, {"pop", pop},
 		{"swap", swap}, {"add", add},
-		{"nop", nop}, {NULL, NULL}
+		{"nop", nop}, {"sub", sub},
+		{NULL, NULL}
 	};
 	i = ins;
 	opcode = T->toks[0];
@@ -25,7 +26,7 @@ void (*find_opcode(void))(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * dlistint_len - function to get the len of a double linked list
+ * stack_len - function to get the len of a double linked list
  * @h: The double linked list
  *
  * Return: the number of nodes.
