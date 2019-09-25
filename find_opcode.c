@@ -9,7 +9,8 @@ void (*find_opcode(void))(stack_t **stack, unsigned int line_number)
 	char *opcode;
 	instruction_t *i;
 	static instruction_t ins[] = {
-		{"push", push}, {"pall", pall}, {NULL, NULL}
+		{"push", push}, {"pall", pall},
+		{"pint", pint}, {NULL, NULL}
 	};
 	i = ins;
 	opcode = T->toks[0];
