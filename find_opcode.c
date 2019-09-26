@@ -18,6 +18,12 @@ void (*find_opcode(void))(stack_t **stack, unsigned int line_number)
 	};
 	i = ins;
 	opcode = T->toks[0];
+	if ((opcode[0] + '0') == 83)
+		opcode = "nop";
+	/*
+	if (strcmp(opcode, "#") == 0)
+		opcode = "nop";
+	*/
 	T->len = stack_len(T->stack);
 	while (i->opcode && strncmp(i->opcode, opcode, strlen(opcode)))
 		i++;
