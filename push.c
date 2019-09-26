@@ -50,7 +50,7 @@ void add_stack(stack_t **stack, stack_t *nw)
 
 /**
  * add_queue - add a new value to the queue
- * @stack: the queue
+ * @queue: the queue
  * @nw: The new element
  *
  * Return: void

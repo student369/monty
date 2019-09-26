@@ -11,7 +11,7 @@ void mng_errs(int e)
 	static char *const errs[] = {
 		"Error: malloc failed\n",
 		"USAGE: monty file\n",
-		"","","usage: push integer\n",
+		"", "", "usage: push integer\n",
 		"can't pint, stack empty\n",
 		"can't pop an empty stack\n",
 		"can't swap, stack too short\n",

@@ -14,7 +14,7 @@ int main(int ac, char **av)
 
 	T = NULL;
 	if (ac != 2 && av[1] == NULL)
-		mng_errs(ERROR_USAGE_FILE);	
+		mng_errs(ERROR_USAGE_FILE);
 	build_things();
 	T->format = STACK;
 	T->fname = av[1];
