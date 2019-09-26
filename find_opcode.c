@@ -16,12 +16,17 @@ void (*find_opcode(void))(stack_t **stack, unsigned int line_number)
 		{"div", _div}, {"mul", _mul},
 		{"mod", _mod}, {"pchar", _pchar},
 		{"pstr", _pstr}, {"rotl", _rotl},
-		{"rotr", _rotr}, {NULL, NULL}
+		{"rotr", _rotr}, {"stack", nop},
+		{"queue", nop},{NULL, NULL}
 	};
 	i = ins;
 	opcode = T->toks[0];
 	if ((opcode[0] + '0') == 83)
 		opcode = "nop";
+	if (strcmp(opcode, "queue") == 0)
+		T->format = QUEUE;
+	if (strcmp(opcode, "stack") == 0)
+		T->format = STACK;
 	T->len = stack_len(T->stack);
 	while (i->opcode && strncmp(i->opcode, opcode, strlen(opcode)))
 		i++;

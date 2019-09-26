@@ -13,9 +13,10 @@ int main(int ac, char **av)
 	void (*execute)(stack_t **stack, unsigned int line_number);
 
 	T = NULL;
-	if (ac != 2)
-		mng_errs(ERROR_USAGE_FILE);
+	if (ac != 2 && av[1] == NULL)
+		mng_errs(ERROR_USAGE_FILE);	
 	build_things();
+	T->format = STACK;
 	T->fname = av[1];
 	T->f = fopen(T->fname, "r");
 	if (T->f == NULL)

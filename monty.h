@@ -8,17 +8,19 @@
 #define ERROR_OPEN_FILE 2
 #define ERROR_UNKNOWN 3
 #define ERROR_PUSH 4
-#define ERROR_PINT 3
-#define ERROR_POP 4
-#define ERROR_SWAP 5
-#define ERROR_ADD 6
-#define ERROR_SUB 7
-#define ERROR_DIV 8
-#define ERROR_ZERO 9
-#define ERROR_MUL 10
-#define ERROR_MOD 11
-#define ERROR_PCHAR 12
-#define ERROR_PCHAR_OUT 13
+#define ERROR_PINT 5
+#define ERROR_POP 6
+#define ERROR_SWAP 7
+#define ERROR_ADD 8
+#define ERROR_SUB 9
+#define ERROR_DIV 10
+#define ERROR_ZERO 11
+#define ERROR_MUL 12
+#define ERROR_MOD 13
+#define ERROR_PCHAR 14
+#define ERROR_PCHAR_OUT 15
+#define STACK 0
+#define QUEUE 1
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -73,6 +75,7 @@ typedef struct things_s
         unsigned int ln;
 	FILE *f;
 	size_t len;
+	int format;
 } things_t;
 extern things_t *T;
 things_t *T;
@@ -94,6 +97,7 @@ void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
 void add_stack(stack_t **stack, stack_t *nw);
+void add_queue(stack_t **queue, stack_t *nw);
 int num_opcodes(char **ops);
 int tok_line(char *line);
 void mng_errs(int e);

@@ -25,7 +25,11 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 		mng_errs(ERROR_PUSH);
 	nw->n = atoi(n);
-	add_stack(stack, nw);
+	if (T->format == STACK)
+		add_stack(stack, nw);
+	else if (T->format == QUEUE)
+		add_queue(stack, nw);
+
 }
 
 /**
@@ -38,8 +42,24 @@ void push(stack_t **stack, unsigned int line_number)
 void add_stack(stack_t **stack, stack_t *nw)
 {
 	nw->prev = NULL;
-	nw->next = *stack;
-	if (*stack)
+	nw->next = (*stack);
+	if ((*stack))
 		(*stack)->prev = nw;
 	(*stack) = nw;
+}
+
+/**
+ * add_queue - add a new value to the queue
+ * @stack: the queue
+ * @nw: The new element
+ *
+ * Return: void
+ */
+void add_queue(stack_t **queue, stack_t *nw)
+{
+	nw->prev = NULL;
+	nw->next = (*queue);
+	if ((*queue))
+		(*queue)->prev = nw;
+	(*queue) = nw;
 }
