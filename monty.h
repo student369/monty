@@ -17,6 +17,8 @@
 #define ERROR_ZERO 9
 #define ERROR_MUL 10
 #define ERROR_MOD 11
+#define ERROR_PCHAR 12
+#define ERROR_PCHAR_OUT 13
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -87,6 +89,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 void add_stack(stack_t **stack, stack_t *nw);
 int num_opcodes(char **ops);
 int tok_line(char *line);
