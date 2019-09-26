@@ -20,7 +20,9 @@ void mng_errs(int e)
 		"can't div, stack too short\n",
 		"division by zero\n",
 		"can't mul, stack too short\n",
-		"can't mod, stack too short\n"
+		"can't mod, stack too short\n",
+		"can't pchar, stack empty\n",
+		"can't pchar, value out of range\n"
 	};
 	if (T)
 		n = T->ln;
