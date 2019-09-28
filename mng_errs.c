@@ -11,7 +11,7 @@ void mng_errs(int e)
 	static char *const errs[] = {
 		"Error: malloc failed\n",
 		"USAGE: monty file\n",
-		"", "", "usage: push integer\n",
+		"", "", "usage: push integer",
 		"can't pint, stack empty\n",
 		"can't pop an empty stack\n",
 		"can't swap, stack too short\n",
@@ -27,14 +27,14 @@ void mng_errs(int e)
 	if (T)
 		n = T->ln;
 	if (e <= 1)
-		dprintf(STDOUT_FILENO, "%s", errs[e]);
+		fprintf(stderr, "%s", errs[e]);
 	else if (e == 2)
-		dprintf(STDOUT_FILENO, "Error: Can't open file %s\n", T->fname);
+		fprintf(stderr, "Error: Can't open file %s\n", T->fname);
 	else if (e == 3)
-		dprintf(STDOUT_FILENO, "L%u: unknown instruction %s\n",
+		fprintf(stderr, "L%u: unknown instruction %s\n",
 			n, T->toks[0]);
 	else if (e >= 4)
-		dprintf(STDOUT_FILENO, "L%u: %s\n", n, errs[e]);
+		fprintf(stderr, "L%u: %s\n", n, errs[e]);
 	free_all();
 	exit(EXIT_FAILURE);
 }
