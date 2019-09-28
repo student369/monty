@@ -8,7 +8,8 @@ void free_all(void)
 {
 	if (T != NULL)
 	{
-		fclose(T->f);
+		if (T->f != NULL)
+			fclose(T->f);
 		if (T->line != NULL)
 			free(T->line);
 		if (T->toks != NULL)
