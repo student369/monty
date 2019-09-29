@@ -15,7 +15,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 
 	if ((*stack) == NULL || T->len < 2)
 	{
-		mng_errs(ERROR_MUL);
+		mng_errs(ERROR_MOD);
 	}
 	tmp = (*stack);
 	while (tmp->prev != NULL)
